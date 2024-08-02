@@ -43,3 +43,6 @@ Integrating frontend and backend, performing unit and integration tests.
 Phase 5: Deployment and Documentation (2 weeks)
 
 Deploying the app to a cloud service and preparing documentation.
+
+
+Maybe add a tournament option.
