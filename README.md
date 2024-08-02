@@ -29,23 +29,18 @@ Security: Implementing robust authentication and data protection measures.
 Estimated Workload:
 
 Phase 1: Planning and Design (2 weeks)
-
 Requirements gathering, wireframing, and project setup.
 
-Phase 2: Frontend Development (4 weeks)
-
+Phase 2: Frontend Development (4 weeks
 Developing the user interfaces for web (React) and mobile (React Native).
 
 Phase 3: Backend Development (4 weeks)
-
 Setting up server, database, and API integrations.
 
 Phase 4: Integration and Testing (3 weeks)
-
 Integrating frontend and backend, performing unit and integration tests.
 
 Phase 5: Deployment and Documentation (2 weeks)
-
 Deploying the app to a cloud service and preparing documentation.
 
 Maybe add a tournament option.
