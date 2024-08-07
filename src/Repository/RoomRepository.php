@@ -5,16 +5,27 @@ namespace App\Repository;
 use App\Entity\Room;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @extends ServiceEntityRepository<Room>
  */
 class RoomRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, entityManagerInterface $entityManager)
     {
         parent::__construct($registry, Room::class);
     }
+
+    public function save(Room $Room): int
+    {
+        $this->enntityManager->persist($Room);
+        $this->entityManager->flush();
+        return $id = $Room->getId();
+    }
+
+
+
 
     //    /**
     //     * @return Room[] Returns an array of Room objects

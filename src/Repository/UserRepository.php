@@ -5,16 +5,25 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @extends ServiceEntityRepository<User>
  */
 class UserRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, entityManagerInterface $entityManager)
     {
         parent::__construct($registry, User::class);
     }
+
+    public function save(User $user): int
+    {
+        $this->enntityManager->persist($user);
+        $this->entityManager->flush();
+        return $id = $user->getId();
+    }
+
 
     //    /**
     //     * @return User[] Returns an array of User objects
@@ -40,4 +49,5 @@ class UserRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
 }

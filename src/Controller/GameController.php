@@ -16,4 +16,8 @@ class GameController extends AbstractController
             'path' => 'src/Controller/GameController.php',
         ]);
     }
+    public function endOfGame(): JsonResponse
+    {
+    //TODO enregistre en bdd le user du gagnant
+    }
 }
