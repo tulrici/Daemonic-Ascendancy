@@ -16,4 +16,19 @@ class LeagueController extends AbstractController
             'path' => 'src/Controller/LeagueController.php',
         ]);
     }
+
+    #[Route('/league/rank/{id}', name: 'app_league')]
+    public function filterListLeague(): JsonResponse
+    {
+        //TODO return the first(s) of a league
+
+        $league = new League();
+        $players = $league->getPlayers();
+        $players = $players->orderBy('score', 'DESC');
+
+        return $this->json([
+            'message' => 'r!',
+            'path' => 'src/Controller/LeagueController.php',
+        ]);
+    }
 }
